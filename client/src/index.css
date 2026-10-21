@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply bg-[#0d1117] text-[#f0f6fc] min-h-screen;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-[#0d1117]; }
+  ::-webkit-scrollbar-thumb { @apply bg-[#30363d] rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-[#484f58]; }
+}
+
+@layer components {
+  .gh-box {
+    @apply bg-[#161b22] border border-[#30363d] rounded-lg transition-colors;
+  }
+  .gh-box-hover {
+    @apply hover:border-[#8b949e]/50;
+  }
+  .gh-input {
+    @apply w-full bg-[#0d1117] border border-[#30363d] text-[#f0f6fc] rounded-md px-3 py-1.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-[#1f6feb] focus:border-[#58a6ff] placeholder:text-[#8b949e]
+           transition-colors;
+  }
+  .gh-btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold
+           bg-[#238636] hover:bg-[#2ea043] border border-[#2ea043]/40 text-white shadow-sm transition-all active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .gh-btn-secondary {
+    @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium
+           bg-[#21262d] hover:bg-[#30363d] border border-[#30363d] text-[#c9d1d9] hover:text-[#f0f6fc] transition-colors active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .gh-btn-danger {
+    @apply inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium
+           bg-[#21262d] hover:bg-[#b62324] border border-[#30363d] text-[#f85149] hover:text-white transition-colors
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .gh-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium border;
+  }
+  .gh-badge-open {
+    @apply bg-[#238636]/15 text-[#3fb950] border-[#238636]/30;
+  }
+  .gh-badge-progress {
+    @apply bg-[#8957e5]/15 text-[#a371f7] border-[#8957e5]/30;
+  }
+  .gh-badge-completed {
+    @apply bg-[#1f6feb]/15 text-[#58a6ff] border-[#1f6feb]/30;
+  }
+  .gh-badge-neutral {
+    @apply bg-[#21262d] text-[#8b949e] border-[#30363d];
+  }
+}
